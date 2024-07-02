@@ -5,7 +5,6 @@ import { v4 as uuidv4 } from 'uuid';
 
 
 
-// Ensure you are importing session correctly
 import { tasksItem } from '@/src/db/schema';
 import { database } from "@/src/db/database";
 import { and, eq } from 'drizzle-orm';
@@ -35,7 +34,6 @@ export const getTaskBySearch = async({title}: {title:string})=>{
    if(!user  ||  !user.id){
     throw new Error ('Unauthorized')
    }
-   //const data =await database.select().from(tasksItem).where(eq(tasksItem.status,title))
    const data =await database.select().from(tasksItem).where(and(eq(tasksItem.status,title) , eq(tasksItem.userId,user.id)))
    revalidatePath('/')
    return data

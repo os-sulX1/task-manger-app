@@ -17,8 +17,7 @@ const GridCard = ({ refresh, status, title  }) => {
       try {
         let data;
         if (title === 'Complete Task') {
-          // If title is 'Complete Task', set items to an empty array
-         // setItems([]);
+         
          data = await getTaskBySearch({ title: 'complete' });
 
         } else if (status === 'all' || status === '') {
@@ -42,14 +41,14 @@ const GridCard = ({ refresh, status, title  }) => {
     };
 
     fetchItems();
-  }, [refresh, status, title]); // Re-fetch data when refresh, status, or title changes
+  }, [refresh, status, title]); 
 
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error.message}</div>;
 
   return (
     <>
-      {items.length === 0 && <EmptyState />} {/* Display EmptyState when no items */}
+      {items.length === 0 && <EmptyState />} 
       
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full mx-11">
         {items.map((item) => (
