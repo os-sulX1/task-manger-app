@@ -1,6 +1,7 @@
 'use server'
 import { getKindeServerSession } from '@kinde-oss/kinde-auth-nextjs/server';
 import { PrismaClient } from '@prisma/client';
+import { revalidatePath } from 'next/cache';
 import { v4 as uuidv4 } from 'uuid'; // Correctly import uuidv4
 
 const prisma = new PrismaClient();
@@ -22,6 +23,7 @@ export const getTaskBySearch = async ({ title }) => {
       ]
     }
   });
+  revalidatePath('/')
 
   return data;
 }
@@ -36,7 +38,7 @@ export const getAllTasks = async () => {
         userId: user.id
       }
     });
-
+    revalidatePath('/')
     return data;
   } catch (error) {
     console.error('Error fetching tasks:', error);
@@ -68,6 +70,8 @@ export async function addTask(values) {
     }
   });
 
+  revalidatePath('/')
+
   return newTask;
 }
 
@@ -89,6 +93,7 @@ export async function editTask(values, taskId) {
       status: 'incomplete'
     }
   });
+  revalidatePath('/')
 
   return updatedTask;
 }
@@ -117,6 +122,7 @@ export const updateStatus = async (taskId, status) => {
   } else {
     throw new Error(`Invalid status: ${status}. Status must be either 'all', 'complete' or 'incomplete'.`);
   }
+  revalidatePath('/')
 
   return updatedTask;
 }
@@ -137,6 +143,7 @@ export async function deleteTask(taskId) {
       ]
     }
   });
+  revalidatePath('/')
 
   return true; // Assuming success
 }
@@ -154,6 +161,7 @@ export async function getTaskById({ taskId }) {
       id: taskId
     }
   });
+  revalidatePath('/')
 
   return task;
 }
