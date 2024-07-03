@@ -7,7 +7,7 @@ import { Button } from "./ui/button";
 
 
 const SideNav = async () => {
-  const {getUser ,isAuthenticated} =  getKindeServerSession();
+  const {getUser } =  getKindeServerSession();
   const user =await getUser()
   
 

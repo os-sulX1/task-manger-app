@@ -14,7 +14,7 @@ const  NavLinks = ()=> {
 				<Button
 					variant={"link"}
 					className={clsx("flex gap-3 justify-start", {
-						"text-blue-600": pathname.includes("/dashboard/files"),
+						"text-white font-bold": pathname.includes("/dashboard/all-tasks"),
 					})}
 				>
 					<HomeIcon /> All Tasks {" "}
@@ -25,7 +25,7 @@ const  NavLinks = ()=> {
 				<Button
 					variant={"link"}
 					className={clsx("flex gap-3 justify-start", {
-						"text-blue-600": pathname.includes("/dashboard/favorite"),
+						"text-white font-bold ": pathname.includes("/dashboard/completed"),
 					})}
 				>
 					<MoveRight /> completed{" "}

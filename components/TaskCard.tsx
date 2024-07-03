@@ -15,7 +15,7 @@ import React, { useState } from "react";
 
 import { useToast } from "./ui/use-toast";
 import TaskCardAction from "./TaskCardAction";
-import EditTask from "./EditTask";
+import EditTask from "./EditTaskDialog";
 
 
 
