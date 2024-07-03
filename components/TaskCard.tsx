@@ -1,14 +1,5 @@
 'use client'
-import {
-	AlertDialog,
-	AlertDialogAction,
-	AlertDialogCancel,
-	AlertDialogContent,
-	AlertDialogDescription,
-	AlertDialogFooter,
-	AlertDialogHeader,
-	AlertDialogTitle,
-} from "@/components/ui/alert-dialog";
+
 import { format, formatDistance, formatRelative, subDays } from "date-fns";
 
 import {
@@ -18,30 +9,11 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
-import {
-	DropdownMenu,
-	DropdownMenuContent,
-	DropdownMenuItem,
-	DropdownMenuLabel,
-	DropdownMenuSeparator,
-	DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 
-import React, { type ReactNode, useEffect, useState } from "react";
-import { Button } from "./ui/button";
-import {
-	EllipsisVertical,
-	GanttChartIcon,
-	ImageIcon,
-	StarHalf,
-	StarIcon,
-	TextIcon,
-	TrashIcon,
-	Undo2Icon,
-} from "lucide-react";
+
+import React, { useState } from "react";
+
 import { useToast } from "./ui/use-toast";
-import Image from "next/image";
-import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import TaskCardAction from "./TaskCardAction";
 import EditTask from "./EditTask";
 
@@ -71,9 +43,7 @@ const TaskCard =  ({description, title ,headerTitle ,taskId ,status ,updateAt}:{
         </div>
         <div className="">
         <p className="text-xs font-semibold">
-            
             {formatRelative(new Date(updateAt), new Date())}
-            
          </p>
         </div>
       </div>

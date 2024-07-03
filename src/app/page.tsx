@@ -1,11 +1,11 @@
-import { auth } from "@/auth";
+import {RegisterLink, LoginLink} from "@kinde-oss/kinde-auth-nextjs/components";
+
 import { SignIn } from "@/components/SignIn";
 import SignOut from "@/components/SignOut";
 import Image from "next/image";
 import Link from "next/link";
 
 const Home = async()=> {
-  const session = await auth();
 
   return (
     <div className="relative min-h-screen flex flex-col justify-center items-center bg-cover bg-center bg-black w-full" style={{ backgroundImage: 'url(/empty.jpg)' }}>
@@ -19,8 +19,8 @@ const Home = async()=> {
           Make an account and start managing your tasks in less than a minute.
         </p>
         <div className="mt-10 flex items-center justify-center gap-x-6">
-        {session?.user ? <SignOut /> : <SignIn title={'home'} />}
-
+          <LoginLink>Sign in</LoginLink>
+          <RegisterLink>Sign up</RegisterLink>
         </div>
       </div>
     </div>

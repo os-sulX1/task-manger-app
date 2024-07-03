@@ -6,14 +6,16 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "db:push": "drizzle-kit push --config=drizzle.config.ts",
-    "db:studio": "drizzle-kit studio --config=drizzle.config.ts"
+    "lint": "next lint"
   },
   "dependencies": {
     "@auth/drizzle-adapter": "^1.4.1",
+    "@auth/prisma-adapter": "^2.4.1",
     "@clerk/nextjs": "^5.1.6",
     "@hookform/resolvers": "^3.6.0",
+    "@kinde-oss/kinde-auth-nextjs": "^2.3.3",
+    "@next/env": "^14.2.4",
+    "@prisma/client": "^5.16.1",
     "@radix-ui/react-alert-dialog": "^1.1.1",
     "@radix-ui/react-avatar": "^1.1.0",
     "@radix-ui/react-dialog": "^1.1.1",
@@ -47,6 +49,7 @@
     "eslint": "^8",
     "eslint-config-next": "14.2.4",
     "postcss": "^8",
+    "prisma": "^5.16.1",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
   }

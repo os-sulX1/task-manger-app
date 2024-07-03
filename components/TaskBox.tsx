@@ -16,9 +16,7 @@ const TaskBox =  ({
 	refresh: string;
 	setRefresh: React.Dispatch<React.SetStateAction<string>>;
 }) => {
-	const handleTaskAdded = () => {
-		setRefresh((prev) => !prev); // Toggle the refresh state to trigger re-fetch
-	};
+
 
 	return (
 		<section className="relative  bg-slate-600 w-full p-4 sm:min-h-screen pb-20">

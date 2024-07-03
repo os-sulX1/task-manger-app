@@ -59,7 +59,7 @@ const GridCard = ({ refresh, status, title  }) => {
             headerTitle={title}
             taskId={item.id}
             status={item.status}
-            updateAt={item.updated_at}
+            updateAt={item.updatedAt}
           />
         ))}
       </div>
