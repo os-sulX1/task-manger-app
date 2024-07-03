@@ -16,7 +16,6 @@ import { useToast } from "@/components/ui/use-toast";
 import { Loader2 } from "lucide-react";
 import { Input } from "./ui/input";
 import { editTask, getTaskById } from "@/src/server/actions";
-import type { Item } from "@/src/db/schema";
 
 const formSchema = z.object({
   id: z.string(),
