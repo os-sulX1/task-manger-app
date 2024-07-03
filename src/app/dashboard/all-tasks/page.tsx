@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 
 const AllTask = () => {
   const [status, setStatus] = useState('all');
-  const [refresh, setRefresh] = useState(''); // Adding refresh state
+  const [refresh, setRefresh] = useState(''); 
 
   return (
     <TaskBox 
