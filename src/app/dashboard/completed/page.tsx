@@ -2,7 +2,7 @@
 import TaskBox from '@/components/TaskBox'
 import React, { useState } from 'react'
 
-const page = () => {
+const completedTask = () => {
   const [status, setStatus] = useState('all');
 
   return (
@@ -10,4 +10,4 @@ const page = () => {
   )
 }
 
-export default page
+export default completedTask
