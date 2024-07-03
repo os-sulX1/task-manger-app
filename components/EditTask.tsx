@@ -53,7 +53,7 @@ const EditTaskDialog =  ({ taskId }: {taskId :string}) => {
       });
     }
     
-  }, [isFileDialogOpen, form]);
+  }, [isFileDialogOpen, form,taskId]);
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
     try {
