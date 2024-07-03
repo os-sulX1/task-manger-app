@@ -1,9 +1,7 @@
 import {RegisterLink, LoginLink} from "@kinde-oss/kinde-auth-nextjs/components";
 
-import { SignIn } from "@/components/SignIn";
-import SignOut from "@/components/SignOut";
+
 import Image from "next/image";
-import Link from "next/link";
 
 const Home = async()=> {
 

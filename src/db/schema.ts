@@ -7,7 +7,6 @@ import type { AdapterAccountType } from "next-auth/adapters"
 
 
 import { drizzle } from 'drizzle-orm/vercel-postgres';
-import { sql } from "@vercel/postgres";
 import {
   pgTable,
   serial,
